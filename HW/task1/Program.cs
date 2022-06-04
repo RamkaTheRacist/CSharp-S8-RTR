@@ -33,14 +33,23 @@ Console.WriteLine("First matrix:");
 PrintMatrix(matrix1);
 Console.WriteLine("Second matrix:");
 PrintMatrix(matrix2);
-for(int i = 0; i < matrix1.GetLength(0); i++)
+double[] array = new double[rows];
+for(int z = 0; z< matrix3.GetLength(0); z++)
 {
-    for(int j = 0; j < matrix1.GetLength(1); j++)
+    for(int j = 0; j < matrix1.GetLength(0); j++)
     {
-        matrix3[i, j] = matrix1[i,j] * matrix2[i, j];
+        double tmp = 0;
+        for(int i = 0; i<matrix1.GetLength(1); i++)
+        {
+            array[i] = matrix1[z,i] * matrix2[i,j];
+            tmp = tmp + array[i];
+        }
+        matrix3[z,j] = tmp;
     }
 }
 Console.WriteLine("Product of two matrix:");
 PrintMatrix(matrix3);
+
+
 
 
