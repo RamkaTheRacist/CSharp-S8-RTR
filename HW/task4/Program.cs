@@ -25,10 +25,18 @@ for(int i = 1; i< matrix.GetLength(0); i++)
         if(j == matrix.GetLength(1) - 1) continue;
         else 
         {
-            Console.SetCursorPosition((10 + (j * number/2)),i);
-            Console.Write($"{matrix[i,j]}");
+            for(int x = 0; x < matrix.GetLength(0); x++)
+            {
+                if(x == i)
+                {
+                    if(j == 0) for(int z = 0; z<(matrix.GetLength(0) - (i - 1)); z++) Console.Write($"\t");
+                    else Console.Write($"\t");
+                }
+            }    
+            Console.Write($"\t{matrix[i,j]}");
+
         }
     }
     Console.WriteLine();
 }
-//Да, я валенок, который не смог в равнобедренный треугольник, сорян
+
